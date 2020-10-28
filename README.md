@@ -1,4 +1,4 @@
-# turfu-linux
+# Turfu-linux
 Script d'installation de Turfu pour linux
 
 # Comment installer Turfu ?

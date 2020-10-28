@@ -5,7 +5,7 @@ if [ "$EUID" -ne 0 ]; then
     exit
 fi
 apt install git -y
-cd -R /opt/
+cd /opt
 git clone https://github.com/zendrique/turfu-linux
 bash /opt/turfu-linux/installation.sh
 exit

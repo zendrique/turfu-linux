@@ -6,11 +6,9 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 function file {
-    cd /opt rm -R turfu-linux/
+    rm -R /opt/turfu-linux/
     git clone https://github.com/zendrique/turfu-linux/
     function launcher
-    exit
-
 }
 
 function launcher {
@@ -18,7 +16,6 @@ function launcher {
     rm Turfu.jar
     curl -o /opt/turfu-linux/Launcher/Turfu.jar https://ci.zendrique.ml/job/Bootstrap%20V1%20-%20Turfu/lastSuccessfulBuild/artifact/Turfu.jar
     echo "Fini !"
-    exit
 }
 
 echo "[?] Que voulez-vous mettre à jour ?"

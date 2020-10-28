@@ -9,7 +9,7 @@ clear
 echo "[?] Voulez-vous installer Java ?"
 select java in "Oui" "Non"; do
     case $java in
-        Oui ) sudo apt install -y default-jre default-jdk break;;
+        Oui ) apt install -y default-jre default-jdk; break;;
         Non ) break;;
     esac
 done

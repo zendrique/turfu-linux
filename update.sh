@@ -5,17 +5,17 @@ if [ "$EUID" -ne 0 ]; then
     exit
 fi
 
-function file {
-    rm -R /opt/turfu-linux/
-    git clone https://github.com/zendrique/turfu-linux/
-    function launcher
-}
-
-function launcher {
+function launcher() {
     cd /opt/turfu-linux/Launcher
     rm Turfu.jar
     curl -o /opt/turfu-linux/Launcher/Turfu.jar https://ci.zendrique.ml/job/Bootstrap%20V1%20-%20Turfu/lastSuccessfulBuild/artifact/Turfu.jar
     echo "Fini !"
+}
+
+function file() {
+    rm -R /opt/turfu-linux/
+    git clone https://github.com/zendrique/turfu-linux/
+    function launcher
 }
 
 echo "[?] Que voulez-vous mettre à jour ?"

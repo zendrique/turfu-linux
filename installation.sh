@@ -23,9 +23,14 @@ curl -o /opt/turfu-linux/Launcher/Turfu.jar https://ci.zendrique.ml/job/Bootstra
 echo "[.] Nétoyage..."
 rm /opt/boot.sh
 echo "[.]Création des alias..."
-alias turfu='bash /opt/turfu-linux/Launcher/turfu.sh'
-alias turfu-update='bash /opt/turfu-linux/update.sh'
+shopt -s expand_aliases
+echo "alias turfu='bash /opt/turfu-linux/turfu.sh'" > .bashrc
+echo "alias turfu-update='bash /opt/turfu-linux/update.sh'" > .bashrc
+source ~/.bashrc
 clear
+echo "[?] Ou voulez-vous mettre Turfu ? (indiquer emplacement complet)"
+read $emplacement
+cp /opt/turfu-linux/turfu.sh /$emplacement/turfu.sh
 echo "[.] Installation fini !"
 echo "Pour démarre turfu éxécuter la commande : 'turfu' dans un terminal"
 echo "Pour mettre à jour Tufu éxécuter la commande : 'turfu-update dans un termianl'"
